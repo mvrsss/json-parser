@@ -5,17 +5,9 @@ import "fmt"
 type Type string
 
 type Literal []rune
-
-type Position struct {
-	Offset int
-	Line   int
-	Column int
-}
-
 type Token struct {
 	Type
 	Literal
-	Position
 }
 
 const (
@@ -29,6 +21,8 @@ const (
 	RBRACKET = "RBRACKET"
 	STRING   = "STRING"
 	INTEGER  = "INTEGER"
+	BOOLEAN  = "BOOLEAN"
+	NULL     = "NULL"
 )
 
 func NewToken(typ Type, literal string) Token {
